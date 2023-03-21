@@ -6,7 +6,7 @@ programa
     		//Colocar todas variavies aqui em cima, juntas
     		inteiro idade , tempo_trabalho , salario , score_idade , score_salario , score_clt , score_tempo_trabalho , score_divida , score_estado_civil , score_final 
         	cadeia empregado , clt , divida , estado_civil
-        	real valor_idade ,valor_emprestimo_idade
+        	real valor_idade ,valor_emprestimo_idade , limite_emprestimo
 
         	
         	score_final = 0
@@ -91,8 +91,10 @@ programa
 
       	se(idade >60)
       	{
+      		limite_emprestimo = (salario *80/100)
+	     	escreva("\nVoce tem um total de limite para emprestimo no valor de ", limite_emprestimo)
         		escreva("\nFoi aprovado 6 parcelas a juros de 3% ")
-	     	escreva("\nQual valor a ser emprestado ")
+	     	escreva("\nQual valor a ser emprestado ")	     	
 			leia(valor_emprestimo_idade)
 	 		valor_idade = (valor_emprestimo_idade * 3/100) + valor_emprestimo_idade
 	 		escreva(valor_idade)
@@ -100,7 +102,9 @@ programa
 	 	senao se(score_final <200){
 	 		escreva("\nSeu credito foi reprovado ") 
 	 	}
-	 	senao se(score_final >200 e score_final < 400) {
+	 	senao se(score_final > 200 e score_final < 400) {
+	 		limite_emprestimo = (salario *70/100)
+	     	escreva("\nVoce tem um total de limite para emprestimo no valor de ", limite_emprestimo)
 	 		escreva("\nFoi aprovado 12 parcelas a juros de 6% ")
 	     	escreva("\nQual valor a ser emprestado ")
 			leia(valor_emprestimo_idade)
@@ -108,6 +112,8 @@ programa
 	 		escreva(valor_idade)
 	 	}
 	 	senao se(score_final >=500){
+	 		limite_emprestimo = (salario *80/100)
+	     	escreva("\nVoce tem um total de limite para emprestimo no valor de ", limite_emprestimo)
 	 		escreva("\nFoi aprovado 24 parcelas a juros de 3% ")
 	     	escreva("\nQual valor a ser emprestado ")
 			leia(valor_emprestimo_idade)
