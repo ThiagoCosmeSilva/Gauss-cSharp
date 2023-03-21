@@ -4,9 +4,9 @@ programa
     {
 
     		//Colocar todas variavies aqui em cima, juntas
-    		inteiro idade , tempo_trabalho , salario , score_idade , score_salario , score_clt , score_tempo_trabalho , score_divida , score_estado_civil , score_final ,valor_emprestimo_idade
+    		inteiro idade , tempo_trabalho , salario , score_idade , score_salario , score_clt , score_tempo_trabalho , score_divida , score_estado_civil , score_final 
         	cadeia empregado , clt , divida , estado_civil
-        	real valor_idade  
+        	real valor_idade ,valor_emprestimo_idade
 
         	
         	score_final = 0
@@ -95,7 +95,26 @@ programa
 	     	escreva("\nQual valor a ser emprestado ")
 			leia(valor_emprestimo_idade)
 	 		valor_idade = (valor_emprestimo_idade * 3/100) + valor_emprestimo_idade
-	 		escreva(valor_emprestimo_idade)
+	 		escreva(valor_idade)
 	 	}
+	 	senao se(score_final <200){
+	 		escreva("\nSeu credito foi reprovado ") 
+	 	}
+	 	senao se(score_final >200 e score_final < 400) {
+	 		escreva("\nFoi aprovado 12 parcelas a juros de 6% ")
+	     	escreva("\nQual valor a ser emprestado ")
+			leia(valor_emprestimo_idade)
+	 		valor_idade = (valor_emprestimo_idade * 6/100) + valor_emprestimo_idade
+	 		escreva(valor_idade)
+	 	}
+	 	senao se(score_final >=500){
+	 		escreva("\nFoi aprovado 24 parcelas a juros de 3% ")
+	     	escreva("\nQual valor a ser emprestado ")
+			leia(valor_emprestimo_idade)
+	 		valor_idade = (valor_emprestimo_idade * 3/100) + valor_emprestimo_idade
+	 		escreva(valor_idade)	
+	 	}
+	 	
+	 	
     }
 }
