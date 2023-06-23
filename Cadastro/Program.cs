@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,6 +9,7 @@ namespace Cadastro
 {
     internal class Program
     {
+        static List<Funcionarios> listaFuncionarios = new List<Funcionarios>();
         static void Main(string[] args)
         {
             Menu();
@@ -60,7 +61,7 @@ namespace Cadastro
         static void CadastroFuncionarios()
         {
 
-            List<Funcionarios> listaFuncionarios = new List<Funcionarios>();
+           
 
 
             var funcionarios = new Funcionarios();
@@ -104,7 +105,7 @@ namespace Cadastro
 
         static void ConsultarFuncionario()
         {
-            List<Funcionarios> listaFuncionarios = new List<Funcionarios>();
+            
 
             foreach (Funcionarios funcionario in listaFuncionarios)
             {
@@ -118,7 +119,7 @@ namespace Cadastro
         static void SetorVendas()
         {
 
-            List<Funcionarios> listaFuncionarios = new List<Funcionarios>();
+            
 
             List<Funcionarios> funcionariosVendas = listaFuncionarios.Where(funcionario => funcionario.Setor == "Vendas").ToList();
 
